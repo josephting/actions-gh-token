@@ -1,0 +1,16 @@
+name: pipeline
+on:
+  pull_request: {}
+
+permissions:
+  id-token: write
+
+jobs:
+  test:
+    name: Github Token
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print env
+        run: env | grep -i token
+      - name: Print GITHUB_TOKEN
+        run: echo ${{ secrets.GITHUB_TOKEN }}
