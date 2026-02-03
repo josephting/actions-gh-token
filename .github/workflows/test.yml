@@ -1,0 +1,11 @@
+name: pipeline
+on:
+  pull_request: {}
+
+jobs:
+  test:
+    name: Github Token
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print env
+        run: env
