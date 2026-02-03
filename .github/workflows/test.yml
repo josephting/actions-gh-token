@@ -1,0 +1,17 @@
+name: pipeline
+on:
+  pull_request: {}
+
+permissions:
+  id-token: write
+
+jobs:
+  test:
+    name: Github Token
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - name: Print JT
+        run: echo "${{ secrets.JT }}"
+      - name: Env JT
+        run: echo "${{ env.JT }}"
